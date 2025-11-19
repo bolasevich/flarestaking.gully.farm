@@ -63,7 +63,7 @@ export const Staking = () => {
                 alignItems: "center",
                 backgroundColor: "#151515",
                 borderRadius: "8px",
-                width: "500px",
+                width: "100%",
                 padding: "20px",
             }}>
                 <ConnectButton
