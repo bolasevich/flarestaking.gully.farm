@@ -63,8 +63,8 @@ export const Staking = () => {
                 alignItems: "center",
                 backgroundColor: "#151515",
                 borderRadius: "8px",
-                width: "100%",
-                padding: "20px",
+                width: "400px",
+                padding: "10px",
             }}>
                 <ConnectButton
                     client={client}
@@ -109,7 +109,7 @@ export const Staking = () => {
                     width: "100%"
                 }}>
                     <h2 style={{ color: "#fff"}}>Owned NFTs</h2>
-                    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "500px"}}>
+                    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "450px"}}>
                         {ownedNFTs && ownedNFTs.length > 0 ? (
                             ownedNFTs.map((nft) => (
                                 <NFTCard
@@ -130,7 +130,7 @@ export const Staking = () => {
                 }}/>
                 <div style={{ width: "100%", margin: "20px 0" }}>
                     <h2 style={{ color: "#fff"}}>Staked NFTs</h2>
-                    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "500px"}}>
+                    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "450px"}}>
                         {stakedInfo && stakedInfo[0].length > 0 ? (
                             stakedInfo[0].map((nft: any, index: number) => (
                                 <StakedNFTCard
