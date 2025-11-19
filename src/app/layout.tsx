@@ -8,6 +8,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Gully Staking On Flare",
   description: "Stake your Gullys on Flare Today!! and earn $billy the next big meme on flare",
+  icons: {
+    icon: "/favicon.ico", // this file goes in /public
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png", // optional
+  },
 };
 
 export default function RootLayout({
