@@ -87,12 +87,10 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-image: url("/bg.png");
+  background-size: cover;       /* Make it fill the screen */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: nice parallax effect */
 }
 
 a {

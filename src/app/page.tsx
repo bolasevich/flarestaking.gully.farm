@@ -12,7 +12,7 @@ export default function Home() {
       margin: "20px auto",
       width: "500px",
     }}>
-      <h1>Gully On Flare Staking App</h1>
+      <h1 style={{ color: "#fff"}}>Gully On Flare Staking App</h1>
       <ConnectEmbed
         client={client}
         chain={chain}
