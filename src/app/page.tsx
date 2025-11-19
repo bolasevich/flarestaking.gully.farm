@@ -9,10 +9,10 @@ export default function Home() {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      margin: "20px auto",
-      width: "500px",
+      margin: "10px auto",
+      width: "100%",
     }}>
-      <h1 style={{ color: "#fff"}}>Gully On Flare Staking App</h1>
+      <h1 style={{ color: "#fff", fontSize: "18px"}}>Gully On Flare Staking App</h1>
       <ConnectEmbed
         client={client}
         chain={chain}

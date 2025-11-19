@@ -23,8 +23,8 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                 style={{
                     borderRadius: "10px",
                     marginBottom: "10px",
-                    height: "200px",
-                    width: "200px"
+                    height: "175px",
+                    width: "175px"
                 }}
             />
             <p style={{ margin: "0 10px 10px 10px"}}>{nft.metadata.name}</p>
