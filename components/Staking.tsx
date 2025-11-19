@@ -17,28 +17,38 @@ export const Staking = () => {
     const [ownedNFTs, setOwnedNFTs] = useState<NFT[]>([]);
     
     const getOwnedNFTs = async () => {
-        let ownedNFTs: NFT[] = [];
-
-        const totalNFTSupply = await totalSupply({
-            contract: NFT_CONTRACT,
-        });
-        const nfts = await getNFTs({
-            contract: NFT_CONTRACT,
-            start: 0,
-            count: parseInt(totalNFTSupply.toString()),
-        });
-        
-        for (let nft of nfts) {
-            const owner = await ownerOf({
+        if (!account?.address) return;
+      
+        const supply = await totalSupply({ contract: NFT_CONTRACT });
+        const nfts = await getNFTs({ contract: NFT_CONTRACT, start: 0, count: Number(supply) });
+      
+        const chunkSize = 10; // number of ownerOf calls at once
+        const ownedNFTs: NFT[] = [];
+      
+        for (let i = 0; i < nfts.length; i += chunkSize) {
+          const chunk = nfts.slice(i, i + chunkSize);
+      
+          const owners = await Promise.all(
+            chunk.map(nft =>
+              ownerOf({
                 contract: NFT_CONTRACT,
                 tokenId: nft.id,
-            });
-            if (owner === account?.address) {
-                ownedNFTs.push(nft);
+              })
+            )
+          );
+      
+          owners.forEach((owner, idx) => {
+            if (owner.toLowerCase() === account.address.toLowerCase()) {
+              ownedNFTs.push(chunk[idx]);
             }
+          });
+      
+          // small delay to avoid rate limit
+          await new Promise(res => setTimeout(res, 200));
         }
+      
         setOwnedNFTs(ownedNFTs);
-    };
+      };
     
     useEffect(() => {
         if(account) {
