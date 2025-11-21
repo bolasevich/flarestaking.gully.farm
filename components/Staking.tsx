@@ -114,6 +114,11 @@ export const Staking = () => {
                     width: "100%",
                     border: "1px solid #333"
                 }}/>
+                <StakeRewards />  
+                <hr style={{
+                    width: "100%",
+                    border: "1px solid #333"
+                }}/>
                 <div style={{ 
                     margin: "20px 0",
                     width: "100%"
@@ -155,11 +160,6 @@ export const Staking = () => {
                         )}
                     </div>
                 </div>
-                <hr style={{
-                    width: "100%",
-                    border: "1px solid #333"
-                }}/>
-                <StakeRewards />  
             </div>
         );
     }
